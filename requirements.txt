@@ -1,0 +1,9 @@
+imgaug==0.4.0
+kornia==0.7.1
+mmcv==1.7.1
+numpy==1.23.5
+opencv_python==4.9.0.80
+pycocotools==2.0.7
+tqdm==4.66.1
+trimesh==4.0.10
+tensorboard==2.10.1
