@@ -1,7 +1,7 @@
 # MRC-Net: 6-DoF Pose Estimation with MultiScale Residual Correlation #
 
 ## Description ##
-This repo implements [MRC-Net: 6-DoF Pose Estimation with MultiScale Residual Correlation]() (CVPR 2024).
+This repo implements [MRC-Net: 6-DoF Pose Estimation with MultiScale Residual Correlation](https://arxiv.org/abs/2403.08019) (CVPR 2024).
 
 ![img](misc/architecture5.png)
 
@@ -26,7 +26,7 @@ bash scripts/run_training.sh
 ```
 
 ## Inference ##
-Our pretrained model weights can be downloaded from [this link](http).
+Our pretrained model weights can be downloaded from [this link](https://drive.google.com/file/d/1Bz2ZFAoTHk-pjCcr3HceCLIcj0ugYYia/view?usp=sharing).
 
 Put the weights under `chkpt_<dataset>` and then run the inference script. For example, if you want to run inference for TLESS dataset, then put `tless.pth` under `chkpt_tless` and run the following command:
 
@@ -46,3 +46,6 @@ If you find our work helpful, please cite our works:
   organization={IEEE}
 }
 ```
+
+## Acknowledgement ##
+Part of the code is based on [SC6D](https://github.com/dingdingcai/SC6D-pose). Thanks the authors for their contributions!

@@ -12,16 +12,16 @@ if ! [ -d ./data/VOCdevkit/VOC2012 ]; then
 fi
 
 if ! [ -d ./data/bop_datasets ]; then
-  mkdir ./data/bop_datasets
+  mkdir -p ./data/bop_datasets
 fi
 
 if ! [ -d ./data/bop_datasets_eval ]; then
-  mkdir ./data/bop_datasets_eval
+  mkdir -p ./data/bop_datasets_eval
 fi
 
 # TLESS
 if ! [ -d ./data/bop_datasets/tless ]; then
-  mkdir ./data/bop_datasets/tless
+  mkdir -p ./data/bop_datasets/tless
   wget https://bop.felk.cvut.cz/media/data/bop_datasets/tless_train_pbr.zip -P ./data/bop_datasets
   unzip ./data/bop_datasets/tless_train_pbr.zip -d ./data/bop_datasets/tless
   wget https://bop.felk.cvut.cz/media/data/bop_datasets/tless_train_primesense.zip -P ./data/bop_datasets
@@ -36,7 +36,7 @@ fi
 
 # LMO
 if ! [ -d ./data/bop_datasets/lmo ]; then
-  mkdir ./data/bop_datasets/lmo
+  mkdir -p ./data/bop_datasets/lmo
   wget https://bop.felk.cvut.cz/media/data/bop_datasets/lm_train_pbr.zip -P ./data/bop_datasets
   unzip ./data/bop_datasets/lm_train_pbr.zip -d ./data/bop_datasets/lmo
   wget https://bop.felk.cvut.cz/media/data/bop_datasets/lmo_test_all.zip -P ./data/bop_datasets
@@ -49,7 +49,7 @@ fi
 
 # YCBV
 if ! [ -d ./data/bop_datasets/ycbv ]; then
-  mkdir ./data/bop_datasets/ycbv
+  mkdir -p ./data/bop_datasets/ycbv
   wget https://bop.felk.cvut.cz/media/data/bop_datasets/ycbv_train_pbr.zip -P ./data/bop_datasets
   unzip ./data/bop_datasets/ycbv_train_pbr.zip -d ./data/bop_datasets/ycbv
   wget https://bop.felk.cvut.cz/media/data/bop_datasets/ycbv_train_real.zip -P ./data/bop_datasets
@@ -64,7 +64,7 @@ fi
 
 # ITODD
 if ! [ -d ./data/bop_datasets/itodd ]; then
-  mkdir ./data/bop_datasets/itodd
+  mkdir -p ./data/bop_datasets/itodd
   wget https://bop.felk.cvut.cz/media/data/bop_datasets/itodd_train_pbr.zip -P ./data/bop_datasets
   unzip ./data/bop_datasets/itodd_train_pbr.zip -d ./data/bop_datasets/itodd
   wget https://bop.felk.cvut.cz/media/data/bop_datasets/itodd_test_all.zip -P ./data/bop_datasets
