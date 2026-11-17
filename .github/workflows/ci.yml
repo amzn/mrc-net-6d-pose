@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          # mmcv 1.7.1 needs pkg_resources (setuptools<70) and torch at build time
+          pip install "setuptools<70" wheel cython numpy==1.23.5
+          pip install --no-build-isolation -r requirements.txt
+      - name: Syntax check
+        run: python -m compileall -q .
+      - name: Import pinned dependencies
+        run: |
+          python -c "import imgaug, kornia, mmcv, numpy, cv2, pycocotools.mask, tqdm, trimesh, tensorboard; print('imports ok')"
