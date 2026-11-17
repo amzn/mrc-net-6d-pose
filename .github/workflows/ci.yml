@@ -21,7 +21,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-          pip install -r requirements.txt
+          # mmcv 1.7.1 needs pkg_resources (setuptools<70) and torch at build time
+          pip install "setuptools<70" wheel cython numpy==1.23.5
+          pip install --no-build-isolation -r requirements.txt
       - name: Syntax check
         run: python -m compileall -q .
       - name: Import pinned dependencies
